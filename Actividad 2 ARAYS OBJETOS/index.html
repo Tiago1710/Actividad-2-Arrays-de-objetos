@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presupuestos Automotores</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h1>Presupuestos Automotores</h1>
+
+    <form id="formPresupuesto">
+        <label>Cliente:</label>
+        <input type="text" id="cliente" required>
+
+        <label>Vehículo:</label>
+        <select id="vehiculo">
+            <option value="39.45">Chevrolet Corsa City</option>
+            <option value="63">Citroen C4</option>
+            <option value="54.4">Fiat Palio Weekend</option>
+            <option value="37.2">Fiat Siena</option>
+            <option value="42.9">Ford Explorer XLT 4x4</option>
+            <option value="66.6">Ford Ranger XLT 4x4</option>
+            <option value="25">Peugeot 306</option>
+            <option value="29.5">Renault Laguna</option>
+            <option value="32.59">Suzuki Fun</option>
+            <option value="39.8">Volkswagen Gol</option>
+            <option value="13.32">Volkswagen Suran</option>
+        </select>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <hr>
+
+    <h2>Buscar por Cliente</h2>
+    <input type="text" id="buscarCliente">
+    <button onclick="buscarCliente()">Buscar</button>
+    <div id="listaCliente"></div>
+
+    <hr>
+
+    <h2>Vehículos con precio superior a 35</h2>
+    <button onclick="mostrarMayores()">Mostrar</button>
+    <div id="listaMayores"></div>
+
+    <script src="repuestos.js"></script>
+</body>
+</html>
