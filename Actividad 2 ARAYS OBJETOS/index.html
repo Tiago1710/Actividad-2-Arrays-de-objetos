@@ -2,50 +2,79 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Presupuestos Automotores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotores</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
+<div class="contenedor">
+
     <h1>Presupuestos Automotores</h1>
 
     <form id="formPresupuesto">
-        <label>Cliente:</label>
-        <input type="text" id="cliente" required>
 
-        <label>Vehículo:</label>
-        <select id="vehiculo">
-            <option value="39.45">Chevrolet Corsa City</option>
-            <option value="63">Citroen C4</option>
-            <option value="54.4">Fiat Palio Weekend</option>
-            <option value="37.2">Fiat Siena</option>
-            <option value="42.9">Ford Explorer XLT 4x4</option>
-            <option value="66.6">Ford Ranger XLT 4x4</option>
-            <option value="25">Peugeot 306</option>
-            <option value="29.5">Renault Laguna</option>
-            <option value="32.59">Suzuki Fun</option>
-            <option value="39.8">Volkswagen Gol</option>
-            <option value="13.32">Volkswagen Suran</option>
-        </select>
+        <label>Nombre</label>
+        <input type="text" id="nombre" required>
 
-        <button type="submit">Calcular</button>
+        <label>Apellido</label>
+        <input type="text" id="apellido" required>
+
+        <label>Vehículo</label>
+        <select id="vehiculo"></select>
+
+        <button type="submit">Generar Presupuesto</button>
+
     </form>
 
-    <div id="resultado"></div>
+    <h2>Presupuestos Realizados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Vehículo</th>
+                <th>Precio</th>
+                <th>IVA</th>
+                <th>Contado</th>
+                <th>Interés</th>
+                <th>Precio Final</th>
+                <th>24 Cuotas</th>
+                <th>36 Cuotas</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaPresupuestos"></tbody>
+
+    </table>
 
     <hr>
 
-    <h2>Buscar por Cliente</h2>
+    <h2>Buscar Vehículos de un Cliente</h2>
+
     <input type="text" id="buscarCliente">
-    <button onclick="buscarCliente()">Buscar</button>
-    <div id="listaCliente"></div>
+
+    <button onclick="buscarCliente()">
+        Buscar
+    </button>
+
+    <div id="resultadoCliente"></div>
 
     <hr>
 
-    <h2>Vehículos con precio superior a 35</h2>
-    <button onclick="mostrarMayores()">Mostrar</button>
-    <div id="listaMayores"></div>
+    <h2>Vehículos con precio superior a:</h2>
 
-    <script src="repuestos.js"></script>
+    <input type="number" id="precioFiltro">
+
+    <button onclick="buscarPrecio()">
+        Buscar
+    </button>
+
+    <div id="resultadoPrecio"></div>
+
+</div>
+
+<script src="repuestos.js"></script>
+
 </body>
 </html>
